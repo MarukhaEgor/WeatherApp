@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.onboarding.screens.ThirdScreenFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_third_screen_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/title_third_screen"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_48sp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_third_screen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_third_screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_sunny"
+        app:layout_constraintBottom_toTopOf="@+id/tv_third_screen_lorem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_third_screen_label" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_third_screen_lorem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/lorem_first_screen"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/bt_next_third_screen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_third_screen" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_next_third_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="@string/btn_go_to_the_app"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_third_screen_lorem" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

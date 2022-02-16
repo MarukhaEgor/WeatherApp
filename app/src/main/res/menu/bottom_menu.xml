@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/firstHomeFragment"
+        android:icon="@drawable/ic_list"
+        android:title="@string/bn_list" />
+    <item
+        android:id="@+id/secondHomeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/bn_home" />
+    <item
+        android:id="@+id/thirdHomeFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/bn_settings" />
+</menu>

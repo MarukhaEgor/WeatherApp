@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lorem_first_screen">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut molestie sapien, eu tristique nunc. Nam ornare, tortor eu facilisis aliquet, libero dui ullamcorper neque, ac dictum arcu lectus sed nulla. Vivamus ex tellus, interdum vitae sagittis non, viverra in neque. Donec aliquet facilisis nunc, id pellentesque est sollicitudin at. Aliquam at eleifend nisi. Donec libero velit, finibus vel lacus at, dignissim consequat augue. Nam sed tincidunt nibh, quis luctus ante. Fusce faucibus malesuada nibh, vitae mattis sem. Donec pretium ex eu faucibus sollicitudin. Phasellus rhoncus, libero in pellentesque dignissim, nulla sem faucibus lectus, vel consequat enim neque at tellus.</string>
+    <string name="permission_message">Need Location Permissions</string>
+    <string name="last_upd_time">Last update </string>
+    <string name="humidity">Humidity </string>
+    <string name="bn_list">List</string>
+    <string name="bn_home">Home</string>
+    <string name="bn_settings">Settings</string>
+    <string name="title_first_screen">Quick</string>
+    <string name="btn_next_tip">NEXT TIP</string>
+    <string name="title_second_screen">Stable</string>
+    <string name="title_third_screen">Beautiful</string>
+    <string name="btn_go_to_the_app">GO TO THE APP</string>
+    <string name="splash_txt_loading">Loading…</string>
+    <string name="splash_txt_pro_nweather">Pro \nWeather</string>
+</resources>
