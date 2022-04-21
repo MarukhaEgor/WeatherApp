@@ -19,13 +19,10 @@ class SecondScreenFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_second_screen, container, false)
-
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
-
         view.bt_next_second_screen.setOnClickListener {
             viewPager?.currentItem = 2
         }
-
         return view
     }
 

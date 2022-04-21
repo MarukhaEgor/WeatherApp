@@ -22,5 +22,4 @@ class HomeActivity : AppCompatActivity() {
         bottomNavView.setupWithNavController(navController)
         supportActionBar?.hide()
     }
-
 }

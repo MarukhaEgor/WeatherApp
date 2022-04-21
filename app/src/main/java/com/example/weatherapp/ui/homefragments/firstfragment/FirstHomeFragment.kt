@@ -40,9 +40,9 @@ class FirstHomeFragment : Fragment() {
     }
 
     private fun setObserve() {
-        viewModel.citiesData.observe(viewLifecycleOwner, { it ->
-            it.let { firstAdapter.submitList(it)}
-        })
+        viewModel.citiesData.observe(viewLifecycleOwner) { it ->
+            it.let { firstAdapter.submitList(it) }
+        }
     }
 
     private fun initRv() {

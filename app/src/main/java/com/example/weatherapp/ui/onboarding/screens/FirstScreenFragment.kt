@@ -12,19 +12,15 @@ import kotlinx.android.synthetic.main.fragment_first_screen.view.*
 
 class FirstScreenFragment : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
         val view = inflater.inflate(R.layout.fragment_first_screen, container, false)
-
         val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
-
         view.bt_next_first_screen.setOnClickListener {
             viewPager?.currentItem = 1
         }
-
         return view
     }
 

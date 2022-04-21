@@ -1,5 +1,6 @@
 package com.example.weatherapp.repository
 
+import android.content.Context
 import com.example.weatherapp.data.CitiesEntity
 import com.example.weatherapp.data.db.CitiesDataBase
 import com.example.weatherapp.model.CurrentDayWeatherData
@@ -9,9 +10,11 @@ import kotlinx.coroutines.flow.Flow
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
-object Repository : KoinComponent {
+class Repository(context: Context) : KoinComponent {
 
     private val db: CitiesDataBase by inject()
+
+    private val sp = context.getSharedPreferences("OpenApp", Context.MODE_PRIVATE)
 
     val allCities: Flow<List<CitiesEntity>> = db.citiesDao().getAllCities()
 
@@ -21,11 +24,13 @@ object Repository : KoinComponent {
         apiService.getWeatherDetail(lat, lon, "metric", Network.apikey)
 
     suspend fun getAllWeatherDetail(lat: Float, lon: Float): WeekForecastWeatherData =
-        apiService.getAllDayWeatherDetail(lat,
+        apiService.getAllDayWeatherDetail(
+            lat,
             lon,
             "hourly,current,minutely,alerts",
             "metric",
-            Network.apikey)
+            Network.apikey
+        )
 
     suspend fun saveLocation(id: Int, lat: Float, lon: Float) {
         val tomorrow = getAllWeatherDetail(lat, lon)
@@ -36,7 +41,8 @@ object Repository : KoinComponent {
         val humidityTomorrow = tomorrow.daily[0].humidity
         val imgCurrent = current.weather[0].icon
         val imgTomorrow = tomorrow.daily[0].weather[0].icon
-        val obj = CitiesEntity(id = id,
+        val obj = CitiesEntity(
+            id = id,
             lat = lat,
             lon = lon,
             tempCurrent = tempCurrent,
@@ -44,8 +50,10 @@ object Repository : KoinComponent {
             tempTomorrow = tempTomorrow,
             humidityTomorrow = humidityTomorrow,
             imgCurrent = imgCurrent,
-            imgTomorrow = imgTomorrow)
+            imgTomorrow = imgTomorrow
+        )
         db.citiesDao().insertCity(obj)
     }
 
+    fun onBoardingFinished(): Boolean = sp.getBoolean("OpenApp", false)
 }

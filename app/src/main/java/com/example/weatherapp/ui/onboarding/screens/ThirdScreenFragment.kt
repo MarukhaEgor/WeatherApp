@@ -19,20 +19,16 @@ class ThirdScreenFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_third_screen, container, false)
-
         view.bt_next_third_screen.setOnClickListener {
             findNavController().navigate(R.id.action_viewPagerFragment_to_homeActivity)
             onBoardingFinished()
         }
         return view
     }
-
     private fun onBoardingFinished(){
         val sharedPref = requireActivity().getSharedPreferences("OpenApp", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
         editor.putBoolean("OpenApp", true)
         editor.apply()
     }
-
-
 }

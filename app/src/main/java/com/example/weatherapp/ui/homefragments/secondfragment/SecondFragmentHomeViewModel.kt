@@ -11,7 +11,7 @@ import com.example.weatherapp.repository.Repository
 import com.example.weatherapp.utils.SingleLiveEvent
 import kotlinx.coroutines.launch
 
-class SecondFragmentHomeViewModel : ViewModel() {
+class SecondFragmentHomeViewModel(private val repository: Repository) : ViewModel() {
 
     private val _navigationEvent = SingleLiveEvent<NavDirections>()
     val navigationEvent: LiveData<NavDirections> = _navigationEvent
@@ -23,14 +23,14 @@ class SecondFragmentHomeViewModel : ViewModel() {
 
     fun getWeatherData(lat: Float, lon: Float) {
         viewModelScope.launch {
-            val weather = Repository.getWeatherDetails(lat, lon)
+            val weather = repository.getWeatherDetails(lat, lon)
             _weatherDetail.postValue(weather)
         }
     }
 
     fun getAllDayWeatherData(lat: Float, lon: Float) {
         viewModelScope.launch {
-            val weather = Repository.getAllWeatherDetail(lat, lon)
+            val weather = repository.getAllWeatherDetail(lat, lon)
             _weekWeatherDetail.postValue(weather)
         }
     }
@@ -43,7 +43,7 @@ class SecondFragmentHomeViewModel : ViewModel() {
 
     fun saveLocation(lat: Float, lon: Float) {
         viewModelScope.launch {
-            Repository.saveLocation(0, lat, lon)
+            repository.saveLocation(0, lat, lon)
         }
     }
 

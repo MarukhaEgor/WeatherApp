@@ -7,6 +7,6 @@ import com.example.weatherapp.data.CitiesEntity
 import com.example.weatherapp.repository.Repository
 
 
-class FirstHomeFragmentViewModel() : ViewModel() {
-    val citiesData: LiveData<List<CitiesEntity>?> = Repository.allCities.asLiveData()
+class FirstHomeFragmentViewModel(repository: Repository) : ViewModel() {
+    val citiesData: LiveData<List<CitiesEntity>?> = repository.allCities.asLiveData()
 }
